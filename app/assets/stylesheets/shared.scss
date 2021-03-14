@@ -1,0 +1,12 @@
+// colours
+$primaryBorder: 1px solid grey;
+
+// sizes
+$innerPadding: 0.75rem 1rem;
+
+// layout
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

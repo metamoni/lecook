@@ -1,0 +1,9 @@
+@import 'shared';
+
+article {
+  border-bottom: $primaryBorder;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
