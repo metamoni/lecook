@@ -4,4 +4,10 @@ describe "dashboard", type: :feature do
 
     expect(page).to have_content 'Oh hi'
   end
+
+  it "displays a link to view all recipes" do
+    visit '/dashboard/index'
+
+    expect(page).to have_link 'View all recipes'
+  end
 end
