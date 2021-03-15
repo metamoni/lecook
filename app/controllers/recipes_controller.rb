@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[ show edit update destroy ]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.order(created_at: :desc)
   end
 
   def show
@@ -13,6 +13,15 @@ class RecipesController < ApplicationController
   end
 
   def create
+    @recipe = Recipe.new(recipe_params)
+
+    respond_to do |format|
+      if @recipe.save
+        format.html { redirect_to recipes_url, notice: "Recipe added" }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
   end
 
   def edit
