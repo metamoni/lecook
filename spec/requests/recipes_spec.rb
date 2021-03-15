@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Recipes", type: :request do
-  let(:recipe) { create(:recipe) }
+  let(:pizza) { create(:recipe) }
 
   context "when recipe is found" do
     describe "GET #index" do
@@ -13,7 +13,7 @@ RSpec.describe "Recipes", type: :request do
 
     describe "GET #show" do
       it "returns http success" do
-        get "/recipes/#{recipe.id}"
+        get "/recipes/#{pizza.id}"
         expect(response).to have_http_status(:success)
       end
     end
@@ -26,29 +26,32 @@ RSpec.describe "Recipes", type: :request do
     end
 
     describe "POST #create" do
-      it "returns http success" do
-        post "/recipes"
-        expect(response).to have_http_status(:success)
+      let(:new_recipe) { post "/recipes", params: { recipe: { title: 'Food', instructions: 'Do things' } } }
+
+      it "redirects after recipe is saved" do
+        post "/recipes", params: { recipe: { title: 'Food', instructions: 'Do things' } }
+        
+        expect(new_recipe).to redirect_to(recipes_url)
       end
     end
 
     describe "GET #edit" do
       it "returns http success" do
-        get "/recipes/#{recipe.id}/edit"
+        get "/recipes/#{pizza.id}/edit"
         expect(response).to have_http_status(:success)
       end
     end
 
     describe "PUT #update" do
       it "returns http success" do
-        put "/recipes/#{recipe.id}"
+        put "/recipes/#{pizza.id}"
         expect(response).to have_http_status(:success)
       end
     end
 
     describe "DELETE #destroy" do
       it "returns http found" do
-        delete "/recipes/#{recipe.id}"
+        delete "/recipes/#{pizza.id}"
         expect(response).to have_http_status(:found)
       end
     end
@@ -57,7 +60,7 @@ RSpec.describe "Recipes", type: :request do
   context "when recipe is not found" do
     describe "DELETE #destroy" do
       it "raises error if record not found" do
-        expect { delete "/recipes/#{recipe.id - 1}" }.to raise_error(ActiveRecord::RecordNotFound)
+        expect { delete "/recipes/#{pizza.id - 1}" }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end

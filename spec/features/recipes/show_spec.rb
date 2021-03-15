@@ -1,8 +1,8 @@
 describe 'show recipe', type: :feature do
-  let!(:pizza) { create(:recipe, id: 2, title: 'Pizza', instructions: 'Make dough and add toppings') }
+  let!(:pizza) { create(:recipe, title: 'Pizza', instructions: 'Make dough and add toppings') }
 
   before do
-    visit '/recipes/2'
+    visit "/recipes/#{pizza.id}"
   end
 
   it 'displays all recipes with instructions' do
