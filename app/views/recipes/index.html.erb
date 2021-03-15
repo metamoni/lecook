@@ -2,5 +2,6 @@
   <article>
     <h2><%= recipe.title %></h2>
     <p><%= recipe.instructions %></p>
+    <p><%= link_to 'View recipe', recipe_path(recipe) %>
   </article>
 <% end %>
