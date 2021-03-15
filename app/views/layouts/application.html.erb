@@ -11,6 +11,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%= link_to 'LeCook', root_path, class: 'home-link' %>
+      <nav>
+        <ul>
+          <li><%= link_to 'Recipes', recipes_path, class: 'nav-link' %></li>
+          <li><%= link_to 'Add recipe', new_recipe_path, class: 'nav-link' %></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
