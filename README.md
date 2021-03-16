@@ -1,7 +1,7 @@
 # README
 
 ## Introduction
-LeCook is a place where you can store your favourite recipes, create meal plans, and generate a shopping list for your weekly meals. The app is in its very early stages, but you can head to the <a href="">LeCook</a> website to try it out.
+LeCook is a place where you can store your favourite recipes, create meal plans, and generate a shopping list for your weekly meals. The app is in its very early stages, but you can head to the <a href="https://lecook.herokuapp.com/">LeCook</a> website to try it out.
 
 ## UML
 ![UML Diagram - First Draft](https://github.com/metamoni/lecook/blob/main/UML%20Diagram.jpg)
