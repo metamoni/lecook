@@ -2,6 +2,9 @@
 
 ## Introduction
 LeCook is a place where you can store your favourite recipes, create meal plans, and generate a shopping list for your weekly meals. The app is in its very early stages, but you can head to the <a href="">LeCook</a> website to try it out.
+
+## UML
+![UML Diagram - First Draft](https://github.com/metamoni/lecook/blob/main/UML%20Diagram.jpg)
 ## MVP
 - create, read, update, delete recipes
 - create, read, update, delete recipe books
