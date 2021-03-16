@@ -26,12 +26,34 @@ RSpec.describe "Recipes", type: :request do
     end
 
     describe "POST #create" do
-      let(:new_recipe) { post "/recipes", params: { recipe: { title: 'Food', instructions: 'Do things' } } }
+      context "when required params present" do
+        before(:each) do
+          post "/recipes", params: { recipe: { title: 'Food', instructions: 'Do things' } }
+        end
 
-      it "redirects after recipe is saved" do
-        post "/recipes", params: { recipe: { title: 'Food', instructions: 'Do things' } }
-        
-        expect(new_recipe).to redirect_to(recipes_url)
+        it "redirects to recipes page" do        
+          expect(controller).to redirect_to(recipes_url)
+        end
+
+        it "sends flash notice" do
+          expect(flash[:notice]).to eq('Recipe added')
+        end
+      end
+
+      context "when missing required params" do
+        it "responds with 422 when instructions missing" do
+          post "/recipes", params: { recipe: { title: "Food" } }
+
+          expect(response.status).to be 422
+          expect(response.message).to eq "Unprocessable Entity"
+        end
+
+        it "responds with 422 when title missing" do
+          post "/recipes", params: { recipe: { instructions: "Do things" } }
+          
+          expect(response.status).to be 422
+          expect(response.message).to eq "Unprocessable Entity"
+        end
       end
     end
 
@@ -50,17 +72,24 @@ RSpec.describe "Recipes", type: :request do
     end
 
     describe "DELETE #destroy" do
-      it "returns http found" do
-        delete "/recipes/#{pizza.id}"
-        expect(response).to have_http_status(:found)
-      end
-    end
-  end
+      context "when delete is successful" do
+        before(:each) do
+          delete "/recipes/#{pizza.id}"
+        end
 
-  context "when recipe is not found" do
-    describe "DELETE #destroy" do
-      it "raises error if record not found" do
-        expect { delete "/recipes/#{pizza.id - 1}" }.to raise_error(ActiveRecord::RecordNotFound)
+        it "redirects to recipes when recipe successfully deleted" do
+          expect(controller).to redirect_to(recipes_url)
+        end
+
+        it "sends flash notice if recipe successfully deleted" do
+          expect(flash[:notice]).to eq('Recipe deleted.')
+        end
+      end
+
+      context "when delete fails" do
+        it "raises error if record not found" do
+          expect { delete "/recipes/#{pizza.id * 999}" }.to raise_error(ActiveRecord::RecordNotFound)
+        end
       end
     end
   end

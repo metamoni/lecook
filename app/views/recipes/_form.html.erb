@@ -1,4 +1,6 @@
 <%= form_for @recipe do |f| %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
   <%= f.label :title %>
   <%= f.text_field :title %><br />
   <%= f.label :instructions %>
