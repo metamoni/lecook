@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Introduction
+LeCook is a place where you can store your favourite recipes, create meal plans, and generate a shopping list for your weekly meals. The app is in its very early stages, but you can head to the <a href="">LeCook</a> website to try it out.
+## MVP
+- create, read, update, delete recipes
+- create, read, update, delete recipe books
+- add/remove recipes from recipe book
+- create, read, update, delete meal plans
+- add/remove recipes from meal plans
+- create shopping list for given meal plan or recipe selection
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## User stories
+As a LeCook user, I want to be able to add my favourite recipes, so I can find them all in one place.<br/><br/>
+As a LeCook user, I want to be able to group my recipes, so I can view all my breakfast, lunch, dinner, desert recipes in one place.<br/><br/>
+As a LeCook user, I want to be able to create meal plans, so I can plan my meals for the upcoming weeks.<br/><br/>
+As a LeCook user, I want to be able to generate a shopping list for the meal plan I created, so I can have a clear idea of what ingredients I need.
