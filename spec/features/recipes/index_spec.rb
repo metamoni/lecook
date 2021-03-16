@@ -7,12 +7,14 @@ describe 'recipes index', type: :feature do
   end
 
   it 'displays all recipes with instructions' do
+    expect(page).to have_content 'All recipes'
+    
     expect(page).to have_content pizza.title
     expect(page).to have_content pizza.instructions
 
     expect(page).to have_content hummous.title
     expect(page).to have_content hummous.instructions
 
-    expect(page).to have_content 'View recipe'
+    expect(page).to have_content('View recipe').twice
   end
 end
