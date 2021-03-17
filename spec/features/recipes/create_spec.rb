@@ -18,7 +18,7 @@ describe 'create recipe', type: :feature do
 
     click_button 'Save recipe'
 
-    current_path.should == recipes_path
+    expect(current_path).to eq recipes_path
   end
 
   # TO DO: Add required fields test
