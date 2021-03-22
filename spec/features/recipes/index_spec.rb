@@ -3,7 +3,7 @@ describe 'recipes index', type: :feature do
   let!(:pizza) { create(:recipe, title: 'Pizza', instructions: 'Make dough and add toppings') }
 
   before do
-    visit '/recipes'
+    visit recipes_path
   end
 
   it 'displays all recipes with instructions' do
