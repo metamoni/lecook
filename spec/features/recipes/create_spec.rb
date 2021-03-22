@@ -1,6 +1,6 @@
 describe 'create recipe', type: :feature do
   before do
-    visit "/recipes/new"
+    visit new_recipe_path
   end
 
   it 'renders create recipe form' do
@@ -12,23 +12,13 @@ describe 'create recipe', type: :feature do
     expect(page).to have_link 'Back'
   end
 
-  it 'redirects to recipes index after recipe added' do
+  it 'shows success message if recipe added' do
     fill_in 'Title', with: 'Tomato sauce'
     fill_in 'Instructions', with: 'Crush tomatoes'
 
     click_button 'Save recipe'
 
+    expect(page).to have_content 'Recipe added'
     expect(current_path).to eq recipes_path
   end
-
-  # TO DO: Add required fields test
-
-  # TO DO: Uncomment once controller is updated
-  # it 'does not redirect if title missing' do
-  #   fill_in 'Instructions', with: 'Crush tomatoes'
-
-  #   click_button 'Save recipe'
-
-  #   current_path.should == new_recipe_path
-  # end
 end
