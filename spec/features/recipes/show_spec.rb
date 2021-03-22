@@ -5,7 +5,7 @@ describe 'show recipe', type: :feature do
     visit "/recipes/#{pizza.id}"
   end
 
-  it 'displays all recipes with instructions' do
+  it 'displays recipe with instructions' do
     expect(page).to have_content pizza.title
     expect(page).to have_content pizza.instructions
 
