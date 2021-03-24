@@ -1,0 +1,4 @@
+<% @meal_plans.each do |meal_plan| %>
+  <h2>Starts: <%= meal_plan.start_date %></h2>
+  <%= link_to 'View plan', meal_plan_path(meal_plan) %>
+<% end %>
