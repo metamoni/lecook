@@ -1,0 +1,7 @@
+<h2>
+  Recipes for <%= @meal_plan.start_date %> - <%= @meal_plan.end_date %>
+</h2>
+
+<% @recipes.each do |recipe| %>
+  <p><%= recipe.title %></p>
+<% end %>
