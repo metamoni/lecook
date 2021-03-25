@@ -4,7 +4,7 @@
   <%= f.label :end_date %>
   <%= f.date_field :end_date %>
 
-  <%= f.collection_check_boxes :recipes, @recipes, :id, :title %>
+  <%= f.collection_check_boxes :recipe_ids, @recipes, :id, :title %>
   
   <%= f.submit 'Save meal plan' %>
 <% end %>
