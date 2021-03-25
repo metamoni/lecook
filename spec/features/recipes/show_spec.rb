@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe 'show recipe', type: :feature do
   let!(:pizza) { create(:recipe, title: 'Pizza', instructions: 'Make dough and add toppings') }
 

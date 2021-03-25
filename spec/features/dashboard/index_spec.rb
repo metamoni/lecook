@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe 'dashboard', type: :feature do
   it 'says hello to me' do
     visit '/dashboard/index'

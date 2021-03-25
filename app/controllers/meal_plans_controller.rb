@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MealPlansController < ApplicationController
   def new
     @meal_plan = MealPlan.new

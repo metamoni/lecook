@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe RecipesController, type: :controller do
   let(:recipe) { create(:recipe) }
-  
+
   describe 'GET #index' do
     before do
       get :index
@@ -30,7 +32,7 @@ RSpec.describe RecipesController, type: :controller do
         post :create, params: { recipe: valid_params }
       end
 
-      it 'redirects to recipes page' do        
+      it 'redirects to recipes page' do
         expect(controller).to redirect_to(recipes_url)
       end
 

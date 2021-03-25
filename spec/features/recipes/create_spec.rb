@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe 'create recipe', type: :feature do
   before do
     visit new_recipe_path
@@ -18,7 +20,6 @@ describe 'create recipe', type: :feature do
 
     click_button 'Save recipe'
 
-    expect(page).to have_content 'Recipe added'
     expect(current_path).to eq recipes_path
   end
 end
