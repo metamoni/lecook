@@ -34,7 +34,7 @@ RSpec.describe MealPlan, type: :model do
     expect(meal_plan).to_not be_valid
     expect(meal_plan.errors[:start_date]).to include "can't be in the past"
   end
-  
+
   it 'is not valid when end date is in the past' do
     meal_plan.end_date = '2021-02-09'
     expect(meal_plan).to_not be_valid

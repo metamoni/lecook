@@ -12,16 +12,16 @@ RSpec.describe MealPlansController, type: :controller do
   end
 
   describe 'GET #index' do
-    let!(:meal_plan_1) { create(:meal_plan, start_date: '2021-03-14', end_date: '2021-03-24') }
-    let!(:meal_plan_2) { create(:meal_plan, start_date: '2021-03-01', end_date: '2021-03-11') }
-    let!(:meal_plan_3) { create(:meal_plan, start_date: '2021-03-07', end_date: '2021-03-17') }
+    let!(:meal_plan_one) { create(:meal_plan, start_date: '2021-03-14', end_date: '2021-03-24') }
+    let!(:meal_plan_two) { create(:meal_plan, start_date: '2021-03-01', end_date: '2021-03-11') }
+    let!(:meal_plan_three) { create(:meal_plan, start_date: '2021-03-07', end_date: '2021-03-17') }
 
     before do
       get :index
     end
 
     it 'assigns all meal plans by start date' do
-      expect(assigns[:meal_plans]).to eq [meal_plan_2, meal_plan_3, meal_plan_1]
+      expect(assigns[:meal_plans]).to eq [meal_plan_two, meal_plan_three, meal_plan_one]
     end
   end
 
