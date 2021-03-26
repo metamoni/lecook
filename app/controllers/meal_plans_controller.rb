@@ -3,7 +3,6 @@
 class MealPlansController < ApplicationController
   def new
     @meal_plan = MealPlan.new
-    @recipes = Recipe.all
   end
 
   def create
@@ -24,7 +23,6 @@ class MealPlansController < ApplicationController
 
   def show
     @meal_plan = MealPlan.find(params[:id])
-    @recipes = Recipe.all
   end
 
   private
