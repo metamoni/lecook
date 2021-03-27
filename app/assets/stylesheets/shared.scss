@@ -1,5 +1,47 @@
 // colours
-$primaryBorder: 1px solid grey;
+$yellow: rgb(226, 212, 103);
+$red: rgb(219, 105, 120);
+$darkBlue: rgb(57, 82, 145);
+$transparentDarkBlue: rgba(57, 82, 145, 0.9);
+$lightBlue: rgb(148, 208, 255);
+$lightText: rgb(240,249,255);
+$green: rgb(65, 191, 71);
+$black: rgb(33, 33, 43);
+$primaryBorder: 1px solid $lightBlue;
+
+// buttons
+button {
+  margin-top: 1em;
+  padding: 0.75em 1.25em;
+  border: none;
+  border-radius: 5px;
+  color: $lightText;
+  text-transform: uppercase;
+  font-size: 0.9em;
+
+  &:hover {
+    background-color: $darkBlue;
+    transform: scale(1.07);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.primary-button {
+    background: $transparentDarkBlue;
+  }
+
+  &.secondary-button {
+    color: $darkBlue;
+    background-color: $lightBlue;
+  }
+
+  &.alert-button {
+    background: $red;
+  }
+
+  &.success-button {
+    background: $green;
+  }
+}
 
 // sizes
 $innerPadding: 0.75rem 1rem;

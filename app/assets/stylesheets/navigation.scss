@@ -2,24 +2,34 @@
 
 header {
   @include flex-center;
-
-  a {
-    text-decoration: none;
-
-    &.home-link {
-      font-size: 2em;
-    }
+  background-color: $darkBlue;
+  padding: 1em;
+  
+  .home-link {
+    font-family: 'Nerko One', cursive;
+    font-size: 2.5em;
+    color: $lightText;
   }
-
+  
   nav {
+    .nav-link {
+      padding: 0.5em 1em;
+      color: $lightText;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $lightBlue;
+        color: $darkBlue;
+      }
+    }
+
     ul {
       margin: 0;
       padding: 0;
       list-style-type: none;
-
+      
       li {
         display: inline;
-        margin-left: 1em;
       }
     }
   }
