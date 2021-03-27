@@ -9,6 +9,10 @@ header {
     font-family: 'Nerko One', cursive;
     font-size: 2.5em;
     color: $lightText;
+
+    &:hover {
+      color: $lightBlue;
+    }
   }
   
   nav {
