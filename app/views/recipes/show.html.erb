@@ -1,10 +1,5 @@
 <h1><%= @recipe.title %></h1>
 
-<% if @recipe.image.attached? %>
-  <image src="<%= (url_for(@recipe.image)) %>" 
-    alt="<%= @recipe.title %>">
-<% end %>
-
 <p><%= @recipe.instructions %></p>
 
 <%= link_to 'Destroy', @recipe, method: :delete, 
