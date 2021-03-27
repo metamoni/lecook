@@ -1,7 +1,26 @@
+@import 'shared';
+
 form {
+  margin-bottom: 2em;
+
   label, input {
     display: block;
     margin-bottom: 0.5em;
+  }
+
+  .check-box {
+    display: inline-block;
+  }
+
+  .date-field {
+    padding: 0.5em;
+    margin-bottom: 2em;
+    border: $secondaryBorder;
+    border-radius: 5px;
+  }
+
+  input[type="checkbox"] {
+    margin: 0 0.5em 1.2em 0;
   }
 
   input[type=submit] {

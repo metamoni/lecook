@@ -7,11 +7,12 @@ $lightBlue: rgb(148, 208, 255);
 $lightText: rgb(240,249,255);
 $green: rgb(65, 191, 71);
 $black: rgb(33, 33, 43);
+$lightGrey: rgb(184, 182, 176);
 $primaryBorder: 1px solid $lightBlue;
+$secondaryBorder: 1px solid $lightGrey;
 
 // buttons
-button {
-  margin-top: 1em;
+button, input[type="submit"] {
   padding: 0.75em 1.25em;
   border: none;
   border-radius: 5px;
