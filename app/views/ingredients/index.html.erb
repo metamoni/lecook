@@ -1,0 +1,5 @@
+<% @ingredients.each do |recipe| %>
+  <p><%= recipe.name %>
+<% end %>
+<br />
+<%= link_to 'Add ingredient', new_ingredient_path %>
