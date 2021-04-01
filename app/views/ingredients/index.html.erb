@@ -1,5 +1,7 @@
 <% @ingredients.each do |recipe| %>
   <p><%= recipe.name %>
+  <%= link_to 'Destroy', recipe, method: :delete, 
+  data: { confirm: 'Are you sure?' } %>
 <% end %>
 <br />
 <%= link_to 'Add ingredient', new_ingredient_path %>
