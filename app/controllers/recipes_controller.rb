@@ -28,7 +28,13 @@ class RecipesController < ApplicationController
   def edit; end
 
   def update
-    # @recipe.image.attach(params[:image])
+    respond_to do |format|
+      if @recipe.update(recipe_params)
+        format.html { redirect_to recipe_path(@recipe), notice: 'Recipe updated' }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy

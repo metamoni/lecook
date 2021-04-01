@@ -1,2 +1,8 @@
-<h1>Recipes#edit</h1>
-<p>Find me in app/views/recipes/edit.html.erb</p>
+<%= form_for @recipe do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br />
+  <%= f.label :instructions %>
+  <%= f.text_area :instructions, size: "30x30" %>
+  
+  <%= f.submit 'Save recipe', class: 'success-button' %>
+<% end %>

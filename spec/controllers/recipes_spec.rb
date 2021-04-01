@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe RecipesController, type: :controller do
-  let(:recipe) { create(:recipe) }
+  let(:recipe) { create(:recipe, title: 'Pancakes') }
 
   describe 'GET #index' do
     before do
@@ -39,6 +39,10 @@ RSpec.describe RecipesController, type: :controller do
       it 'sends flash message' do
         expect(flash[:notice]).to eq('Recipe added')
       end
+
+      it 'saves recipe to database' do
+        expect(Recipe.count).to eq 1
+      end
     end
 
     context 'with invalid params' do
@@ -50,6 +54,30 @@ RSpec.describe RecipesController, type: :controller do
 
       it 'saves recipe without bad params' do
         expect { Recipe.last.bad_param }.to raise_error(NoMethodError, /undefined method `bad_param'/)
+      end
+    end
+  end
+
+  describe 'PUT #update' do
+    context 'with valid params' do
+      before do
+        put :update, params: { id: recipe.id, recipe: { title: 'Blueberry pancakes' } }
+        recipe.reload
+      end
+
+      it 'updates recipe with correct attributes' do
+        expect(recipe.title).to eq 'Blueberry pancakes'
+      end
+    end
+
+    context 'with invalid params' do
+      before do
+        put :update, params: { id: recipe.id, recipe: { bad_param: 'Bbbbb-bad' } }
+        recipe.reload
+      end
+
+      it 'does not update recipe with invalid params' do
+        expect { recipe.bad_param }.to raise_error(NoMethodError, /undefined method `bad_param'/)
       end
     end
   end
