@@ -8,11 +8,11 @@
 end
 
 MealPlan.create!([{
-                   start_date: Date.new(2021, 3, 15),
-                   end_date: Date.new(2021, 3, 27)
+                   start_date: Date.new(2024, 3, 15),
+                   end_date: Date.new(2024, 3, 27)
                  }])
 
 MealPlan.create!([{
-                   start_date: Date.new(2021, 4, 1),
-                   end_date: Date.new(2021, 4, 8)
+                   start_date: Date.new(2024, 4, 1),
+                   end_date: Date.new(2024, 4, 8)
                  }])
