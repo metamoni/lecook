@@ -7,11 +7,9 @@ describe 'create recipe', type: :feature do
 
   it 'renders create recipe form' do
     expect(page).to have_content 'Add a new recipe'
-    expect(page).to have_field 'Image'
     expect(page).to have_field 'Title'
     expect(page).to have_field 'Instructions'
     expect(page).to have_button 'Save recipe'
-    expect(page).to have_link 'Back'
   end
 
   it 'shows success message if recipe added' do
