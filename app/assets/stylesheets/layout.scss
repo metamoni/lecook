@@ -1,4 +1,3 @@
-
 @import 'shared';
 
 body, input, textarea {
@@ -12,6 +11,8 @@ body {
 }
 
 main {
+  max-width: 60%;
+  margin: 0 auto;
   padding: 0 1em;
 }
 
@@ -28,5 +29,21 @@ a {
     &:hover {
       color: $green;
     }
+  }
+}
+
+.alert {
+  padding: 0.5em 1em;
+  
+  &.success {
+    background-color: $transparentGreen;
+    border: 1px solid $green;
+    color: $textGreen;
+  }
+
+  &.danger {
+    background-color: $transparentRed;
+    border: 1px solid $red;
+    color: $textRed;
   }
 }
