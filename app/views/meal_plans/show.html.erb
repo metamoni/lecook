@@ -5,3 +5,7 @@
 <% @meal_plan.recipes.each do |recipe| %>
   <p><%= recipe.title %></p>
 <% end %>
+
+<%= link_to 'Destroy', @meal_plan, method: :delete, 
+  data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Edit', edit_meal_plan_path(@meal_plan) %>
