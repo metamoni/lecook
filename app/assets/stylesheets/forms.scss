@@ -1,7 +1,7 @@
 @import 'shared';
 
 .form {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 
   input, textarea {
     padding: 0.25em 0.5em;
@@ -42,4 +42,12 @@
   input {
     margin-right: 1em;
   }
+}
+
+trix-editor {
+  margin-bottom: 1em;
+}
+
+trix-editor, trix-toolbar {
+  max-width: 50%;
 }
