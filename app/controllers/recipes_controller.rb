@@ -19,6 +19,8 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to recipes_url, notice: 'Recipe added' }
+      elsif @recipe.errors['instructions'].include?("can't be blank")
+        format.html { redirect_to new_recipe_url, notice: "You can't add a recipe without instructions" }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

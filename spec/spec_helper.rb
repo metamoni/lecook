@@ -9,8 +9,8 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  config.filter_run focus: true
-  config.run_all_when_everything_filtered = true
   config.shared_context_metadata_behavior = :apply_to_host_groups
   config.order = :random
+  config.filter_run focus: true
+  config.run_all_when_everything_filtered = true
 end

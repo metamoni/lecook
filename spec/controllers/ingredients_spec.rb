@@ -17,7 +17,7 @@ RSpec.describe IngredientsController, type: :controller do
     end
 
     it 'assigns all ingredients' do
-      %w(Sugar salt pepper oraNGEs ChickPeaS).map do |name|
+      %w[Sugar salt pepper oraNGEs ChickPeaS].map do |name|
         FactoryBot.create(:ingredient, name: name)
       end
 

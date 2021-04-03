@@ -6,4 +6,5 @@ class Recipe < ApplicationRecord
   has_many :meal_plans, through: :menus
 
   validates :title, :instructions, presence: true
+  has_rich_text :instructions
 end
