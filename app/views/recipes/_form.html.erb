@@ -1,6 +1,6 @@
 <%= form_for @recipe, html: { class: 'form' } do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title, required: true %><br />
+  <%= f.text_field :title, class: 'recipe-title', required: true %><br />
   <%= f.label :instructions %>
   <%= f.rich_text_area :instructions, required: true %>
   
