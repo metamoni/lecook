@@ -1,6 +1,6 @@
 <%= form_for @ingredient, html: { class: 'ingredient-form' } do |f| %>
   <%= f.label :name, class: 'sr-only' %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, required: true %>
   <%= f.submit 'Add ingredient', class: 'add-button' %>
 <% end %>
 
