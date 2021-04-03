@@ -1,6 +1,6 @@
 @import 'shared';
 
-form {
+.form {
   margin-bottom: 2em;
 
   input, textarea {
@@ -33,5 +33,13 @@ form {
 
   input[type="file"] {
     padding: 0.5em 0;
+  }
+}
+
+.ingredient-form {
+  display: flex;
+
+  input {
+    margin-right: 1em;
   }
 }

@@ -4,6 +4,7 @@ header {
   @include flex-center;
   background-color: $darkBlue;
   padding: 1em;
+  margin-bottom: 2em;
   
   .home-link {
     font-family: 'Nerko One', cursive;

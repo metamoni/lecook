@@ -1,7 +1,12 @@
+<%= form_for @ingredient, html: { class: 'ingredient-form' } do |f| %>
+  <%= f.label :name, class: 'sr-only' %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Add ingredient', class: 'add-button' %>
+<% end %>
+
+
 <% @ingredients.each do |recipe| %>
   <p><%= recipe.name %>
   <%= link_to 'Destroy', recipe, method: :delete, 
   data: { confirm: 'Are you sure?' } %>
 <% end %>
-<br />
-<%= link_to 'Add ingredient', new_ingredient_path %>

@@ -1,8 +1,8 @@
-<%= form_for @recipe do |f| %>
+<%= form_for @recipe, html: { class: 'form' } do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %><br />
   <%= f.label :instructions %>
   <%= f.text_area :instructions, size: "30x30" %>
   
-  <%= f.submit 'Save recipe', class: 'success-button' %>
+  <%= f.submit 'Save recipe', class: 'button success-button' %>
 <% end %>
