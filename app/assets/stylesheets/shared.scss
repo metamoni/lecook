@@ -12,7 +12,7 @@ $primaryBorder: 1px solid $lightBlue;
 $secondaryBorder: 1px solid $lightGrey;
 
 // buttons
-button, input[type="submit"] {
+.button, input.button {
   padding: 0.75em 1.25em;
   border: none;
   border-radius: 5px;
@@ -52,4 +52,15 @@ $innerPadding: 0.75rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+// screen reader only
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
 }
