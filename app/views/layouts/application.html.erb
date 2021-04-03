@@ -10,24 +10,14 @@
   </head>
 
   <body>
-    <header>
-      <%= link_to 'LeCook', root_path, class: 'home-link' %>
-      <nav>
-        <ul>
-          <li><%= link_to 'Meal plans', meal_plans_path, class: 'nav-link' %></li>
-          <li><%= link_to 'Add meal plan', new_meal_plan_path, class: 'nav-link' %></li>
-          <li><%= link_to 'Recipes', recipes_path, class: 'nav-link' %></li>
-          <li><%= link_to 'Add recipe', new_recipe_path, class: 'nav-link' %></li>
-        </ul>
-      </nav>
-    </header>
+    <%= render 'layouts/page_header' %>
 
     <main>
       <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
+        <p class="alert success"><%= notice %></p>
       <% end %>
       <% if alert %>
-        <p class="alert alert-danger"><%= alert %></p>
+        <p class="alert danger"><%= alert %></p>
       <% end %>
       <%= yield %>
     </main>
