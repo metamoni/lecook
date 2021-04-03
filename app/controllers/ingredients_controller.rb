@@ -12,6 +12,8 @@ class IngredientsController < ApplicationController
     respond_to do |format|
       if @ingredient.save
         format.html { redirect_to ingredients_url, notice: 'Ingredient added' }
+      elsif @ingredient.errors['name'].include?('has already been taken')
+        format.html { redirect_to ingredients_url, notice: 'Ingredient already exists' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

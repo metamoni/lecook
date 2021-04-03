@@ -17,7 +17,10 @@ RSpec.describe IngredientsController, type: :controller do
     end
 
     it 'assigns all ingredients' do
-      FactoryBot.create_list(:ingredient, 5)
+      %w(Sugar salt pepper oraNGEs ChickPeaS).map do |name|
+        FactoryBot.create(:ingredient, name: name)
+      end
+
       expect(assigns[:ingredients].count).to eq 5
     end
   end
@@ -52,6 +55,23 @@ RSpec.describe IngredientsController, type: :controller do
 
       it 'saves ingredient without bad params' do
         expect { Ingredient.last.bad_param }.to raise_error(NoMethodError, /undefined method `bad_param'/)
+      end
+    end
+
+    context 'with duplicate name' do
+      let!(:courgette) { create(:ingredient, name: 'Courgette') }
+      let(:ingredient_params) { { name: 'courgette' } }
+
+      before do
+        post :create, params: { ingredient: ingredient_params }
+      end
+
+      it 'redirects to ingredients path' do
+        expect(controller).to redirect_to ingredients_url
+      end
+
+      it 'displays flash message' do
+        expect(flash[:notice]).to eq 'Ingredient already exists'
       end
     end
   end
