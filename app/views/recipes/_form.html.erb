@@ -2,7 +2,7 @@
   <%= f.label :title %>
   <%= f.text_field :title, required: true %><br />
   <%= f.label :instructions %>
-  <%= f.text_area :instructions, size: "30x30", required: true %>
+  <%= f.rich_text_area :instructions, required: true %>
   
   <%= f.submit 'Save recipe', class: 'button success-button' %>
 <% end %>
