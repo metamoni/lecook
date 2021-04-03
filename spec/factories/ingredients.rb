@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :ingredient do
-    name { 'MyString' }
+    name { 'Green curry' }
   end
 end
