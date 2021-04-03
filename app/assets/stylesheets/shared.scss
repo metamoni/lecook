@@ -1,11 +1,15 @@
 // colours
 $yellow: rgb(226, 212, 103);
 $red: rgb(219, 105, 120);
+$transparentRed: rgba(219, 105, 120, 0.1);
+$textRed: rgb(152,37,37);
 $darkBlue: rgb(57, 82, 145);
 $transparentDarkBlue: rgba(57, 82, 145, 0.9);
 $lightBlue: rgb(148, 208, 255);
 $lightText: rgb(240,249,255);
 $green: rgb(65, 191, 71);
+$transparentGreen: rgba(65, 191, 71, 0.1);
+$textGreen: rgb(38,78,29);
 $black: rgb(33, 33, 43);
 $lightGrey: rgb(184, 182, 176);
 $primaryBorder: 1px solid $lightBlue;
@@ -46,6 +50,13 @@ $secondaryBorder: 1px solid $lightGrey;
 
 // sizes
 $innerPadding: 0.75rem 1rem;
+
+// screen sizes
+$mobile: 320px;
+$tablet: 480px;
+$smallScreen: 768px;
+$largeScreen: 1024px;
+$extraLargeScreen: 1200px;
 
 // layout
 @mixin flex-center {
