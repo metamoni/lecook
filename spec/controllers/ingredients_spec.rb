@@ -71,7 +71,7 @@ RSpec.describe IngredientsController, type: :controller do
       end
 
       it 'displays flash message' do
-        expect(flash[:notice]).to eq 'Ingredient already exists'
+        expect(flash[:alert]).to eq 'Ingredient already exists'
       end
     end
   end

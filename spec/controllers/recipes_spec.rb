@@ -3,8 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe RecipesController, type: :controller do
-  let(:recipe) { create(:recipe, title: 'Pancakes') }
-
   describe 'GET #index' do
     before do
       get :index
@@ -59,6 +57,8 @@ RSpec.describe RecipesController, type: :controller do
   end
 
   describe 'PUT #update' do
+    let(:recipe) { create(:recipe, title: 'Pancakes') }
+
     context 'with valid params' do
       before do
         put :update, params: { id: recipe.id, recipe: { title: 'Blueberry pancakes' } }
@@ -83,6 +83,8 @@ RSpec.describe RecipesController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
+    let(:recipe) { create(:recipe, title: 'Pancakes') }
+
     context 'when recipe found' do
       before(:each) do
         delete :destroy, params: { id: recipe.id }
